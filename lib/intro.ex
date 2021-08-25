@@ -33,7 +33,31 @@ def empty(list), do: length(list) == 0
 
 def first([head | _tail]), do: head
 
-def last([list]) when 
+
+def last([head | tail]) when tail == [], do: head
+def last([_head | tail]), do: last(tail)
+
+
+def prepend(list,int), do: [int | list]
+
+def appends(list, int), do: [list | int]
+
+def listlength([]), do: 0
+def listlength([_head|tail]),   do: 1 + listlength(tail)
+
+
+def sum([]), do: 0
+def sum([head|tail]),   do: head + sum(tail)
+
+def average([]), do: 0
+def average(list), do: sum(list) / listlength(list)
+
+def concat([],[]), do: []
+def concat(list1,[]), do: list1
+def concat([],list2), do: list2
+def concat(list1, [head | tail]), do: concat(appends(list1, head), tail)
+
+#def starts_with(string,tecken),
 
 
 
