@@ -76,4 +76,8 @@ defmodule IntroTest do
       test "first element in list expect element" do
         assert Intro.first([1,2,3]) == 1
       end
+
+      test "last element in a list" do
+        assert Intro.last([1,2,3]) == 3
+      end
 end

@@ -33,7 +33,7 @@ def empty(list), do: length(list) == 0
 
 def first([head | _tail]), do: head
 
-
+def last([list]) when 
 
 
 
