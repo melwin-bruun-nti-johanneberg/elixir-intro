@@ -114,7 +114,27 @@ defmodule IntroTest do
         assert Intro.concat([1,2],[6,0]) == [1,2,6,0]
       end
 
-      #test "Tar en sträng och ett tecken som input och returnerar true/false beroende på om strängen börjar med tecknet eller ej." do
-        #assert Intro.starts_with("hej",2) == "2hej"
-      #end
+      test "Tar en sträng och ett tecken som input och returnerar true/false beroende på om strängen börjar med tecknet eller ej." do
+        assert Intro.starts_with("hej","h") == true
+        assert Intro.starts_with("nice","h") == false
+        assert Intro.starts_with("nice","") == false
+        assert Intro.starts_with("","n") == false
+      end
+
+      test "Tar en sträng och ett tecken som input och returnerar true/false beroende på om strängen slutar med tecknet eller ej." do
+        assert Intro.ends_with("hej","j") == true
+        assert Intro.ends_with("nice","h") == false
+        assert Intro.ends_with("nice","") == false
+        assert Intro.ends_with("","n") == false
+      end
+
+      test "chomp" do
+        assert Intro.chomp("") == ""
+        assert Intro.chomp("hej\n") == "hej"
+
+
+      end
+
+
+
 end

@@ -42,9 +42,9 @@ def prepend(list,int), do: [int | list]
 
 def appends(n, []), do: [n]
 def appends(n, [head | tail]), do: [head|appends(n,tail)]
-def listlength([]), do: 0
-def listlength([_head|tail]),   do: 1 + listlength(tail)
-
+def listlength(list, acc \\ 0 )
+def listlength([], acc), do: acc
+def listlength([_head | tail], acc), do: listlength(tail, acc + 1)
 
 def sum([]), do: 0
 def sum([head|tail]),   do: head + sum(tail)
@@ -57,8 +57,36 @@ def concat(list1,[]), do: list1
 def concat([],list2), do: list2
 def concat(list1, [head | tail]), do: concat(appends(head,list1), tail)
 
-#def starts_with(string,tecken),
+def starts_with(_s,""), do: false
+def starts_with("",_t), do: false
+def starts_with(s,t) do
+  l = String.graphemes(s)
+  f = first(l)
+  f == t
+end
 
+
+def ends_with(_s,""), do: false
+def ends_with("",_t), do: false
+def ends_with(s,t) do
+  l = String.graphemes(s)
+  f = last(l)
+  f == t
+end
+
+def chomp(string) do
+  bool = ends_with("\n", string)
+    cond do
+      bool == false ->
+        string
+      bool == true ->
+        [head | tail] = String.graphemes(string)
+        len = listlength(String.graphemes(string))
+        to_string(appen([head | tail], len-1))
+    end
+  end
+  def appen([_head | _tail], acc) when acc == 0, do: []
+  def appen([head | tail], acc) when acc > 0, do: [head|appen(tail, acc - 1)]
 
 
 
