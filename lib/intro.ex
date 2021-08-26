@@ -55,7 +55,7 @@ def average(list), do: sum(list) / listlength(list)
 def concat([],[]), do: []
 def concat(list1,[]), do: list1
 def concat([],list2), do: list2
-def concat(list1, [head | tail]), do: concat(appends(list1, head), tail)
+def concat(list1, [head | tail]), do: concat(appends(head,list1), tail)
 
 #def starts_with(string,tecken),
 
