@@ -40,8 +40,8 @@ def last([_head | tail]), do: last(tail)
 
 def prepend(list,int), do: [int | list]
 
-def appends(list, int), do: [list | int]
-
+def appends(n, []), do: [n]
+def appends(n, [head | tail]), do: [head|appends(n,tail)]
 def listlength([]), do: 0
 def listlength([_head|tail]),   do: 1 + listlength(tail)
 

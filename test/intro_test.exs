@@ -88,8 +88,8 @@ defmodule IntroTest do
         assert Intro.prepend([],0) == [0]
       end
       test "append 0 in list at last place" do
-        assert Intro.appends([1,2,3],0) == [1,2,3,0]
-        assert Intro.appends([],0) == [0]
+        assert Intro.appends(0,[1,2,3]) == [1,2,3,0]
+        assert Intro.appends(0,[]) == [0]
       end
 
       test "längden av en lista" do
@@ -114,7 +114,7 @@ defmodule IntroTest do
         assert Intro.concat([1,2],[6,0]) == [1,2,6,0]
       end
 
-      test "Tar en sträng och ett tecken som input och returnerar true/false beroende på om strängen börjar med tecknet eller ej." do
-        assert Intro.starts_with("hej",2) == "2hej"
-      end
+      #test "Tar en sträng och ett tecken som input och returnerar true/false beroende på om strängen börjar med tecknet eller ej." do
+        #assert Intro.starts_with("hej",2) == "2hej"
+      #end
 end
