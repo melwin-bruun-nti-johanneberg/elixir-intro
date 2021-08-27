@@ -74,8 +74,8 @@ def ends_with(s,t) do
   f == t
 end
 
-def chomp(string) do
-  bool = ends_with("\n", string)
+def chomps(string) do
+  bool = ends_with(string, "\n")
     cond do
       bool == false ->
         string
@@ -88,8 +88,9 @@ def chomp(string) do
   def appen([_head | _tail], acc) when acc == 0, do: []
   def appen([head | tail], acc) when acc > 0, do: [head|appen(tail, acc - 1)]
 
-
-
+  #def index_of("",_tecken), do: nil
+  #def index_of(_string,""), do: nil
+  #def index_of(string,tecken)
 
 
 end

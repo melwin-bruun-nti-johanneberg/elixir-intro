@@ -129,12 +129,17 @@ defmodule IntroTest do
       end
 
       test "chomp" do
-        assert Intro.chomp("") == ""
-        assert Intro.chomp("hej\n") == "hej"
+        assert Intro.chomps("") == ""
+        assert Intro.chomps("hej\n") == "hej"
 
 
       end
 
+      #test "index of string with tecken" do
+        #assert Intro.index_of("","w") == nil
+        #Den räknar från 0
+        #assert Intro.index_of("index", "d" ) == 2
 
+      #end
 
 end
